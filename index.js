@@ -11,8 +11,14 @@ app.use(
   })
 );
 
+
 mongoose.connect(
-  "mongodb://127.0.0.1:27017/AdhiShaktiAdhiMaya",
+  // "mongodb://127.0.0.1:27017/AdhiShaktiAdhiMaya",
+  "mongodb+srv://pratiksha:Pratiksha04$@cluster0.zj4bww4.mongodb.net/adhiShaktiAdhiMaya?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  },
   console.log("DB Connectedddd!!!!!!!!!!!")
 );
 
