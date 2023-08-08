@@ -5,22 +5,20 @@ mongoose.set("strictQuery", true);
 var cors = require("cors");
 var routes = require("./routes/routes");
 
-// app.use(
-//   cors({
-//     origin: "*",
-//   })
-// );
+app.use(
+  cors()
+);
 
-const allowedOrigins = ['https://pratikshaghodke.github.io/AdhiShaktiAdhiMaya/'];
-app.use(cors({
-  origin: function (origin, callback) {
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-}));
+// const allowedOrigins = ['https://pratikshaghodke.github.io/AdhiShaktiAdhiMaya/'];
+// app.use(cors({
+//   origin: function (origin, callback) {
+//     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   }
+// }));
 
 
 mongoose.connect(
