@@ -22,11 +22,11 @@ mongoose.connect(
   console.log("DB Connectedddd!!!!!!!!!!!")
 );
 
-app.listen(444, function checkDB(error) {
+app.listen(3000, function checkDB(error) {
   if (error) {
     console.log(error);
   } else {
-    console.log("444 PORT Connected Successfully!!!!");
+    console.log("3000 PORT Connected Successfully!!!!");
   }
 });
 
