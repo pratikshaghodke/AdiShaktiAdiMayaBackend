@@ -7,7 +7,7 @@ var routes = require("./routes/routes");
 
 app.use(
   cors({
-    origin: "http://localhost:4200",
+    origin: "https://pratikshaghodke.github.io/AdhiShaktiAdhiMaya/",
   })
 );
 
