@@ -28,7 +28,7 @@ router
   .route("/api/uploadBanner")
   .post(upload.single("image"), bannerController.uploadImage);
 
-router.route("/api/images").get(bannerController.getAllImages);
+// router.route("/api/images").get(bannerController.getAllImages);
 router
   .route("/api/createExperience")
   .post(experienceController.createExperienceControllerFn);
