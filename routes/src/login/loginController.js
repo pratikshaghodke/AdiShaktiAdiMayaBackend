@@ -6,7 +6,7 @@ var loginControllerFn = async (req, res) => {
     var password = req.body.password;
     const useremail = await register.findOne({
       email: email,
-      password: password,
+      password: password
     });
 
     var response = {
@@ -27,4 +27,4 @@ var loginControllerFn = async (req, res) => {
   }
 };
 
-module.exports = { loginControllerFn };
+module.exports = { loginControllerFn  };

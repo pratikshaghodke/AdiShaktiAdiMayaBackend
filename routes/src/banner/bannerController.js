@@ -17,14 +17,14 @@ const uploadImage = async (req, res) => {
   }
 };
 
-const getAllImages = (req, res) => {
-    Image.find({}, (err, images) => {
-      if (err) {
-        return res.status(500).json({ error: 'Error retrieving images.' });
-      }
-      res.status(200).json(images);
-    });
-}
+// const getAllImages = (req, res) => {
+//     Image.find({}, (err, images) => {
+//       if (err) {
+//         return res.status(500).json({ error: 'Error retrieving images.' });
+//       }
+//       res.status(200).json(images);
+//     });
+// }
   
 
-module.exports = { uploadImage, getAllImages };
+module.exports = { uploadImage };

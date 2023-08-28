@@ -8,10 +8,19 @@ const https = require('https');
 const fs = require('fs');
 
 app.use(
-  cors({
-    origin: "http://localhost:4200",
-  })
+  cors()
 );
+
+// const allowedOrigins = ['https://pratikshaghodke.github.io/AdhiShaktiAdhiMaya/'];
+// app.use(cors({
+//   origin: function (origin, callback) {
+//     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   }
+// }));
 
 
 mongoose.connect(
@@ -23,7 +32,6 @@ mongoose.connect(
   },
   console.log("DB Connectedddd!!!!!!!!!!!")
 );
-
 
 const https_options = {
   ca: fs.readFileSync("ca_bundle.crt"),
