@@ -11,7 +11,7 @@ const fs = require('fs');
 //   cors()
 // );
 
-const allowedOrigins = ['https://pratikshaghodke.github.io/AdhiShaktiAdhiMaya/'];
+const allowedOrigins = ['https://pratikshaghodke.github.io/'];
 app.use(cors({
   origin: function (origin, callback) {
     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
