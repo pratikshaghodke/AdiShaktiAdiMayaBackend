@@ -4,21 +4,23 @@ const mongoose = require("mongoose");
 mongoose.set("strictQuery", true);
 var cors = require("cors");
 var routes = require("./routes/routes");
+const https = require('https');
+const fs = require('fs');
 
-app.use(
-  cors()
-);
+// app.use(
+//   cors()
+// );
 
-// const allowedOrigins = ['https://pratikshaghodke.github.io/AdhiShaktiAdhiMaya/'];
-// app.use(cors({
-//   origin: function (origin, callback) {
-//     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error('Not allowed by CORS'));
-//     }
-//   }
-// }));
+const allowedOrigins = ['https://pratikshaghodke.github.io/AdhiShaktiAdhiMaya/'];
+app.use(cors({
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
 
 
 mongoose.connect(
@@ -31,14 +33,18 @@ mongoose.connect(
   console.log("DB Connectedddd!!!!!!!!!!!")
 );
 
-app.listen(80, function checkDB(error) {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("80 PORT Connected Successfully!!!!");
-  }
-});
+const https_options = {
+  ca: fs.readFileSync("ca_bundle.crt"),
+  key: fs.readFileSync("private.key"),
+  cert: fs.readFileSync("certificate.crt")
+ };
 
+ const server = https.createServer(https_options, app);
+
+const PORT = 8443; // Default HTTPS port
+server.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 app.use(cors());
 app.use(express.json());
 app.use(routes);
