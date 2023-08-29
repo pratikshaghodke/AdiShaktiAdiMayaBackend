@@ -41,7 +41,7 @@ const https_options = {
 
  const server = https.createServer(https_options, app);
 
-const PORT = 443; // Default HTTPS port
+const PORT = 8443; // Default HTTPS port
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
