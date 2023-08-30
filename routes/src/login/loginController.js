@@ -2,6 +2,7 @@ var register = require("../user/userModel");
 
 var loginControllerFn = async (req, res) => {
   try {
+    console.log(req);
     var email = req.body.email;
     var password = req.body.password;
     const useremail = await register.findOne({
