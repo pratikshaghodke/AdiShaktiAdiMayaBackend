@@ -15,28 +15,28 @@ const fs = require('fs');
 
 
 
-// const allowedOrigins = ['https://pratikshaghodke.github.io/'];
-// app.use(cors({
-//   origin: function (origin, callback) {
-//     if(!origin) return callback(null, true);
-//     if(allowedOrigins.indexOf(origin) === -1){
-//       var msg = 'The CORS policy for this site does not ' +
-//                 'allow access from the specified Origin.';
-//       return callback(new Error(msg), false);
-//     }
-//     return callback(null, true);
-//   }
-// }));
 const allowedOrigins = ['https://pratikshaghodke.github.io/'];
-const corsOptions = {
-  origin: (origin, callback) => {
-    if (allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error())
+app.use(cors({
+  origin: function (origin, callback) {
+    if(!origin) return callback(null, true);
+    if(allowedOrigins.indexOf(origin) === -1){
+      var msg = 'The CORS policy for this site does not ' +
+                'allow access from the specified Origin.';
+      return callback(new Error(msg), false);
     }
+    return callback(null, true);
   }
-}
+}));
+// const allowedOrigins = ['https://pratikshaghodke.github.io/'];
+// const corsOptions = {
+//   origin: (origin, callback) => {
+//     if (allowedOrigins.indexOf(origin) !== -1) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error())
+//     }
+//   }
+// }
 
 
 mongoose.connect(
@@ -61,6 +61,6 @@ const PORT = 8443; // Default HTTPS port
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 app.use(express.json());
 app.use(routes);
