@@ -9,7 +9,7 @@ const fs = require('fs');
 
 app.use(
   cors({
-    origin : 'https://pratikshaghodke.github.io/'
+    origin : '*'
   })
 );
 
