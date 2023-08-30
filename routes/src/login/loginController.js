@@ -18,7 +18,9 @@ var loginControllerFn = async (req, res) => {
         status: 1,
         data: useremail,
       };
+      // res.set('Access-Control-Allow-Origin',' https://pratikshaghodke.github.io')
       res.send(response);
+
     } else {
       res.send(response);
     }
