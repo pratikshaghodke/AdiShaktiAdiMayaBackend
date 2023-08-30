@@ -51,6 +51,6 @@ const PORT = 8443; // Default HTTPS port
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 app.use(express.json());
 app.use(routes);
