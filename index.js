@@ -7,20 +7,22 @@ var routes = require("./routes/routes");
 const https = require('https');
 const fs = require('fs');
 
-// app.use(
-//   cors()
-// );
+app.use(
+  cors({
+    origin : 'https://pratikshaghodke.github.io/'
+  })
+);
 
-const allowedOrigins = ['https://pratikshaghodke.github.io/'];
-app.use(cors({
-  origin: function (origin, callback) {
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-}));
+// const allowedOrigins = ['https://pratikshaghodke.github.io/'];
+// app.use(cors({
+//   origin: function (origin, callback) {
+//     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   }
+// }));
 
 
 mongoose.connect(
