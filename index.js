@@ -24,12 +24,18 @@ const fs = require('fs');
 const allowedOrigins = ['https://pratikshaghodke.github.io/', 'https://pratikshaghodke.github.io/AdhiShaktiAdhiMaya', 'https://pratikshaghodke.github.io/AdhiShaktiAdhiMaya/'];
 app.use(cors({
   origin: function (origin, callback) {
-    if(!origin) return callback(null, true);
+    console.log(origin);
+    if(!origin) {
+      console.log("in no origin");
+      return callback(null, true);
+    }
     if(allowedOrigins.indexOf(origin) === -1){
+      console.log("in -1 origin");
       var msg = 'The CORS policy for this site does not ' +
                 'allow access from the specified Origin.';
       return callback(new Error(msg), false);
     }
+    console.log("no error");
     return callback(null, true);
   }
 }));
