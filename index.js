@@ -29,7 +29,7 @@ const fs = require('fs');
 //       console.log("in no origin");
 //       return callback(null, true);
 //     }
-//     if(allowedOrigins.indexOf(origin) === -1){
+//     if(allowedOrigins.indexOf(origin) === -1 || !origin){
 //       console.log("in -1 origin");
 //       var msg = 'The CORS policy for this site does not ' +
 //                 'allow access from the specified Origin.';
