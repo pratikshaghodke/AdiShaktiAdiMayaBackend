@@ -40,10 +40,13 @@ const fs = require('fs');
 //   }
 // }));
 
-const allowedOrigins = ['https://pratikshaghodke.github.io/'];
+const allowedOrigins = ['https://pratikshaghodke.github.io/','https://adishaktiadimayabackend.in/','https://pratikshaghodke.github.io'];
+//const allowedOrigins = ['*']
 const corsOptions = {
   origin: (origin, callback) => {
+          console.log(origin)
     if (allowedOrigins.indexOf(origin) !== -1) {
+//if (true){
       callback(null, true)
     } else {
       callback(new Error())
@@ -71,9 +74,11 @@ const https_options = {
  const server = https.createServer(https_options, app);
 
 const PORT = 443; // Default HTTPS port
+const HOSTNAME = "0.0.0.0"
 server.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running at http://${HOSTNAME}:${PORT}/`);
 });
+//console.log(corsOptions)
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(routes);
