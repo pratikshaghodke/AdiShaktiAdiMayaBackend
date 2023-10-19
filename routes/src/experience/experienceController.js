@@ -8,10 +8,17 @@ var createExperienceControllerFn = async (req, res) => {
     experienceModelData.experience = body.experience;
 
     await experienceModelData.save().then((item) => {
-      res.send(item);
+      res.send({
+        status: 1,
+        msg: "Experience added successfully",
+        data: item
+      });
     });
   } catch (error) {
-    res.status(400).send(error);
+    res.status(400).send({
+      status: 0,
+      msg: error,
+    });
   }
 };
 
@@ -20,13 +27,23 @@ var getAllExperience = async(req, res)=>{
         const userExperience = await experienceModel.find();
         console.log(userExperience);
           if (userExperience) {
-            res.send(userExperience);
+            res.send({
+              status: 1,
+              msg: "Experience list fetched successfully",
+              data: userExperience
+            });
           } else {
-            res.send("Data is not available");
+            res.send({
+              status: 0,
+              msg: "Data not available"
+            });
           }
     }
     catch(error){
-        res.status(400).send(error);
+        res.status(400).send({
+          status: 0,
+          msg: error
+        });
     }
 }
 
@@ -37,12 +54,12 @@ var getAllExperience = async(req, res)=>{
       const updatedItem = await experienceModel.findByIdAndUpdate(itemId, { isApproved: true }, { new: true });
   
       if (!updatedItem) {
-        return res.status(404).json({ error: 'Item not found' });
+        return res.status(404).json({ status: 0, msg: 'Item not found' });
       }
   
-      res.json({item: updatedItem });
+      res.json({status: 1, data: updatedItem });
     } catch (error) {
-      res.status(500).json({ error: 'Error approving item' });
+      res.status(500).json({ status: 0, msg: error });
     }
   }
 
