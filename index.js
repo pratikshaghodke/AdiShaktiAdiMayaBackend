@@ -40,7 +40,7 @@ const fs = require('fs');
 //   }
 // }));
 
-const allowedOrigins = ['https://pratikshaghodke.github.io/','https://adishaktiadimayabackend.in/','https://pratikshaghodke.github.io'];
+const allowedOrigins = ['https://adishaktiadimaya.in/', 'https://pratikshaghodke.github.io/','https://adishaktiadimayabackend.in/','https://pratikshaghodke.github.io'];
 //const allowedOrigins = ['*']
 const corsOptions = {
   origin: (origin, callback) => {
