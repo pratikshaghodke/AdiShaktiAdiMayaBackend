@@ -21,7 +21,7 @@ const fs = require('fs');
 // })
 
 
-// const allowedOrigins = ['https://pratikshaghodke.github.io/', 'https://pratikshaghodke.github.io/AdhiShaktiAdhiMaya', 'https://pratikshaghodke.github.io/AdhiShaktiAdhiMaya/', 'http://192.168.43.193:4200', 'http://192.168.43.193:4200/'];
+// const allowedOrigins = ['https://pratikshaghodke.github.io/', 'https://pratikshaghodke.github.io/AdhiShaktiAdhiMaya', 'https://pratikshaghodke.github.io/AdhiShaktiAdhiMaya/'];
 // app.use(cors({
 //   origin: function (origin, callback) {
 //     console.log(origin);
@@ -40,7 +40,7 @@ const fs = require('fs');
 //   }
 // }));
 
-const allowedOrigins = ['https://adishaktiadimaya.in','https://adishaktiadimaya.in/', 'https://pratikshaghodke.github.io/','https://adishaktiadimayabackend.in/','https://pratikshaghodke.github.io'];
+const allowedOrigins = ['https://adishaktiadimaya.in','https://adishaktiadimaya.in/', 'https://pratikshaghodke.github.io/','https://adishaktiadimayabackend.in/','https://pratikshaghodke.github.io', 'http://192.168.43.193:4200', 'http://192.168.43.193:4200/'];
 //const allowedOrigins = ['*']
 const corsOptions = {
   origin: (origin, callback) => {
