@@ -21,7 +21,7 @@ const fs = require('fs');
 // })
 
 
-// const allowedOrigins = ['https://pratikshaghodke.github.io/', 'https://pratikshaghodke.github.io/AdhiShaktiAdhiMaya', 'https://pratikshaghodke.github.io/AdhiShaktiAdhiMaya/'];
+// const allowedOrigins = ['https://pratikshaghodke.github.io/', 'https://pratikshaghodke.github.io/AdhiShaktiAdhiMaya', 'https://pratikshaghodke.github.io/AdhiShaktiAdhiMaya/', 'http://192.168.43.193:4200', 'http://192.168.43.193:4200/'];
 // app.use(cors({
 //   origin: function (origin, callback) {
 //     console.log(origin);
