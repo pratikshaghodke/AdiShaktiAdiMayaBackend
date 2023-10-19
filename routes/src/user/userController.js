@@ -10,10 +10,16 @@ var createUserControllerFn = async (req, res) => {
     userModelData.password = body.password;
 
     await userModelData.save().then((item) => {
-      res.send("user careted successfully");
+      res.send({
+        status: 1,
+        msg : "User created successfully"
+      });
     });
   } catch (error) {
-    res.status(400).send(error);
+    res.status(400).send({
+      status: 0,
+      msg : "Failed to create new user"
+    });
   }
 };
 
