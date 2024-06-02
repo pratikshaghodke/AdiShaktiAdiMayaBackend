@@ -45,8 +45,7 @@ const allowedOrigins = ['https://adishaktiadimaya.in','https://adishaktiadimaya.
 const corsOptions = {
   origin: (origin, callback) => {
           console.log(origin)
-          console.log("origin check ",allowedOrigins.indexOf(origin));
-    if (allowedOrigins.indexOf(origin) !== -1) {
+   if (allowedOrigins.indexOf(origin) !== -1) {
 
     //if (true){
       callback(null, true)
@@ -76,9 +75,8 @@ const https_options = {
  const server = https.createServer(https_options, app);
 
 const PORT = 443; // Default HTTPS port
-const HOSTNAME = "0.0.0.0"
 server.listen(PORT, () => {
-  console.log(`Server is running at http://${HOSTNAME}:${PORT}/`);
+  console.log(`Server is running at ${PORT}/`);
 });
 //console.log(corsOptions)
 app.use(cors(corsOptions));
