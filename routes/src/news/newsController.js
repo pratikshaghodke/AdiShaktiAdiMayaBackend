@@ -23,14 +23,15 @@ var addNews = async (req, res) => {
 };
 
 var getNews = async(req, res)=>{
+  console.log("in get news")
     try{
-        const news = await newsModel.find();
-        console.log("news ",news);
-          if (news) {
+        const newsData = await news.find();
+        console.log("news ",newsData);
+          if (newsData) {
             res.send({
               status: 1,
               msg: "News list fetched successfully",
-              data: news
+              data: newsData
             });
           } else {
             res.send({
@@ -40,6 +41,7 @@ var getNews = async(req, res)=>{
           }
     }
     catch(error){
+      console.log("error in fetching news ", error);
         res.status(400).send({
           status: 0,
           msg: error
