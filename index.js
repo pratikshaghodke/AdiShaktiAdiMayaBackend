@@ -79,6 +79,6 @@ server.listen(PORT, () => {
   console.log(`Server is running at ${PORT}/`);
 });
 //console.log(corsOptions)
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 app.use(express.json());
 app.use(routes);
