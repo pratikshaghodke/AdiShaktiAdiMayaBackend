@@ -41,7 +41,7 @@ router
   .put(experienceController.approveItemById);
 router
   .route("/api/addNews")
-  .post(experienceController.addNews);
+  .post(newsController.addNews);
 router
   .route("/api/getnews")
   .get(newsController.getNews);
