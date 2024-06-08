@@ -3,11 +3,11 @@ var Schema = mongoose.Schema;
 
 var newsSchema = new Schema(
   {
-    newsHeading: {
+    heading: {
       type: String,
       require: true,
     },
-    news: {
+    content: {
       type: String,
       require: true,
     },
@@ -19,5 +19,5 @@ var newsSchema = new Schema(
   { timestamps: true }
 );
 
-var news = mongoose.model("experienceMaster", newsSchema);
+var news = mongoose.model("newsMaster", newsSchema);
 module.exports = news;

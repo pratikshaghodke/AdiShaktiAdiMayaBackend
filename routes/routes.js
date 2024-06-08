@@ -21,6 +21,7 @@ var userController = require("./src/user/userController");
 var loginController = require("./src/login/loginController");
 var bannerController = require("./src/banner/bannerController");
 var experienceController = require("./src/experience/experienceController");
+var newsController = require("./src/news/newsController");
 
 router.route("/api/createUser").post(userController.createUserControllerFn);
 router.route("/api/userLogin").post(loginController.loginControllerFn);
@@ -38,4 +39,11 @@ router
 router
   .route("/api/approveExperience/:id")
   .put(experienceController.approveItemById);
+router
+  .route("/api/addNews")
+  .post(experienceController.addNews);
+router
+  .route("/api/getnews")
+  .get(newsController.getNews);
+  
 module.exports = router;
